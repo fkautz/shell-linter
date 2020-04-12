@@ -1,7 +1,6 @@
-FROM alpine:3.10.3
+FROM fedora:31
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories; \
-    apk update && apk add --no-cache shellcheck bash
+RUN dnf install -y ShellCheck
 
 COPY entrypoint.sh /entrypoint.sh
 
